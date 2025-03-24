@@ -1,48 +1,107 @@
-<!DOCTYPE html> <!-- 声明文档类型为 HTML5 -->
-<html lang="en"> <!-- 定义 HTML 文档的根元素，并设置语言为英语 -->
-<head> <!-- 头部区域，包含元数据和链接外部资源 -->
-    <meta charset="UTF-8"> <!-- 设置字符编码为 UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置视口，使网页在移动设备上正确显示 -->
-    <title>介绍</title> <!-- 设置网页标题，显示在浏览器标签页上 -->
-    <link rel="stylesheet" href="style.css"> <!-- 链接外部 CSS 文件，用于设置网页样式 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>小赖购物商场</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body> <!-- 网页的主体内容区域 -->
-    <h1>欢迎来到小赖专属网站简介</h1> <!-- 一级标题 -->
-    <script src="script.js"></script> <!-- 链接外部 JavaScript 文件，用于添加交互功能 -->
-    <div class="main-frame"> <!-- 创建一个大的框架容器 -->
-        <div class="sub-frame" id="frame1"> <!-- 第一个小框架 -->
-            <h2>什么是小赖专属网站？</h2> <!-- 小框架的标题 -->
-            <p>简单来说小赖专属网站是小赖同学自己制作的一个网站，网站的布局可以随心所欲，根据自己
-                的喜好来编辑，可以大胆的发挥想象，创造一个属于自己的一方世界。
-            </p> <!-- 小框架的内容 -->
-        </div>
-        <div class="sub-frame" id="frame2"> <!-- 第二个小框架 -->
-            <h2>网站和网页有什么不一样？</h2> <!-- 小框架的标题 -->
-            <p>简单来说，网页只是一个单纯的页面，可以展示的东西以及功能有限，而我们的现象很丰富
-                ，只有一页肯定无法满足我们的需求，所以我们会创造出多个网页来满足现象，把多个网页
-                结合起来就形成了一个网站。一页一页的组合成了一本书，这下你明白了吗。
-            </p> <!-- 小框架的内容 -->
-        </div>
-        <div class="sub-frame" id="frame3"> <!-- 第三个小框架 -->
-            <h2>为什么要制作网页</h2> <!-- 小框架的标题 -->
-            <p>制作网页也是一项技术，当你掌握了这项技术，你就可以创作出自己喜欢的作品，不用受制于人，
-                不用看别人脸色。别人有的我们也可以有，甚至是更好的，规则自己制定，让那些曾经为难自己的都转化成我们自己的！
-            </p> <!-- 小框架的内容 -->
-        </div>
-        <div class="sub-frame" id="frame3"> <!-- 第四个小框架 -->
-            <h2>我有话说！</h2> <!-- 小框架的标题 -->
-            <p>也许你们很好奇小赖同学是怎么懂这些的，我自己是否也可以制作呢
-                其实呀这都是我一步步制作的，哪有什么一步登天，我也是经历了无数次的错误
-                才制作出来的，制作这些并不难，只要肯下定决心坚持下去你也一定可以制作出一个更完美的专属于你自己的网站！
-            </p> <!-- 小框架的内容 -->
-        </div>
-        <div class="sub-frame" id="frame3"> <!-- 第五个小框架 -->
-            <h2>励志</h2> <!-- 小框架的标题 -->
-            <p> 努力到无能为力，拼搏到感到自己<br>
-                车到山前必有路，船到桥头自然直<br>
-                宝剑锋从磨砺出，梅花香自苦寒来<br>
-            </p> <!-- 小框架的内容 -->
+<body>
+    <!-- 顶部导航 -->
+    <div class="header">
+        <div class="logo">欢迎来到小赖购物商城</div>
+        <div class="search-container">
+            <input type="text" placeholder="搜索商品..." id="searchInput">
+            <div class="dropdown-content" id="dropdown">
+                <a href="https://item.taobao.com/item.htm?spm=a21bo.tmall%2Fa.201876.d3.1778c3d5z1L9Y4&id=898089629214&scm=1007.40986.420852.0&pvid=621ac261-1a31-46af-a5f3-5fe432f4a00d&xxc=home_recommend&skuId=5922130655649&utparam=%7B%22aplus_abtest%22%3A%22e71404bbe162e3b17759f4703805c69f%22%7D&priceTId=2147816a17426513155921403eba11&pisk=ggt-nnfMejclDFxRnLu0xF_48WMcRqvzrQJ_x6fuRIdvCdPlR6vlvvdVi3fkEgwyuCv_q30PxkIPYMGiscmgULSFA6DI4UPzG9BExuZQAgSXgm_AVcmMUKelFAvjj3YMQTWzRkOCPZ6fQs6COu6IHZ6GdMZ5RuabGs5fAT6QPK1fBOqQPMOQhm6PdWw5dwifl9X1A6OQVmMALs65AMM1m8C3F6Ep5J5TqZZnUuZWDTQR9kfYvnKQja5_XsZLvZmNP1GGMkZBDTp0Elu0X2f67_bG1Ii02MpfpIQMyfEJ9p9wRZKLNYA6GedC3ElLJ1LBEF-coJaWHHCR53_YLAv6U9OCJElTjTIkkNKJzvPXFCfJ5gJ3BbvAWEQNhZwLPgYMIH76V0FNiNWpMNY-6ud143-MXB-_s1B3PxHY8y753okXrMmvlAQcH1D0oyzFotWAsxHY8y753tCinm4U8ZXV.">热门推荐</a>
+                <a href="https://item.taobao.com/item.htm?id=826700455285&priceTId=2147816a17426513608481539eba11&pvid=b1cfe85b-2782-4089-9180-24784ec3a8d6&scm=1007.40986.420852.0&skuId=5716916636124&spm=a21bo.tmall%2Fa.201876.d81.1778c3d5z1L9Y4&utparam=%7B%22aplus_abtest%22%3A%2217889849d7739d2285938f51c3c32872%22%7D&xxc=home_recommend">限时折扣</a>
+                <a href="https://item.taobao.com/item.htm?spm=a21bo.tmall%2Fa.201876.d56.1778c3d5z1L9Y4&id=892955264998&scm=1007.40986.420852.0&pvid=9b62404c-442e-459c-9284-327f873892ae&xxc=home_recommend&skuId=5741349349367&utparam=%7B%22aplus_abtest%22%3A%2260580920823638e364923e5b00f23bf8%22%7D&priceTId=2147816a17426513374061475eba11&pisk=gG4KnoM09OX3YdaKsWSMroiw4L1iFGVexJPXrYDHVReTGSJnVYVny_eZIyD3t2OUb-VX-yjErU3Ez46cnZbDTWurPYf58kJEfjGlrbiBA2u_QNitRZb0T5dnOsV1oyq0g7ceVUwSAcGsgAGSFeG56cGmN4TIVet6CAksPXGWA5MsMjYWA4wW1NG-9HtIVbG15XcIPYwSOF1taAGIP4MskBHkOYL8cQkv-c1eFe8UWXnKeUD9yyUkoDDflATJycYsAx6mBUT7WXFMtESMkgDb0vmmhR_MJ4FswRn0vtLLe7N4VcUJd62bCueS_lWJ2xE7tozijQtQ6zHKcyi9asVbTbwS2lWvoX33XmULY_J_O-DLc2PkM9VtDlnq1cOJA2q0izobRwpqIml8BmqdHeef4zz0k8zXnxhkA1C943oI_F5_x4bTfsni6xfMj3-rjfltn1C943oI_fHcsNxy4ccN.">新品上市</a>
+                <a href="https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?spm=a21bo.tmall/a.yingxiao.d4_1.1778c3d5z1L9Y4&wh_pid=daily-552263&disableNav=YES&status_bar_transparent=true&itemId=563068200649">数码产品</a>
+                <a href="https://detail.tmall.com/item.htm?id=899181828488&spm=a21bo.tmall%2Fa.201876.d2.1778c3d5z1L9Y4&scm=1007.40986.420852.0&pvid=621ac261-1a31-46af-a5f3-5fe432f4a00d&xxc=home_recommend&skuId=5920698219898&utparam=%7B%22aplus_abtest%22%3A%220eeb4cf4280c14efb91b291cc70eb2f0%22%7D&priceTId=2147816a17426513155921403eba11&pisk=gdwxHj03Dab0Payxqo5kIWGy_Fskh_q2irrBIV0D1zU8Ak8m1VqmBGUrr-00mxt4ayqBn-fqIdHqQA_h-9XH0okZCVj13S82FciFIKijCxk7zTG-h9X30uKmcMq5K-V3YLmD1dasGbiSY4is5Ki12binfA9j1KOWP4uSCmi6GugSvDv6GAa6VTimXFiXCftSVmojCVas5gESzcHs5A1vDVxjWdFBb2pmNBs66Ce-Dj39I4pT37Jna2TjPdviZEGqRw0JCdw-DuxDL_vds2NEoX0QPTvxBuiTyXVAJKUTfkPswRLfmya76PizaNdtJ5Z0T8ckfIZ8BqhQhbKNxkZqfPGTawpnDxV-9-FVbUZb-qFI3lxdouhLwXoSNhdjnWq3QXwfHeuoTcU-tSQpHysP4J2L7JTnJcAf2gdw_jiyUgNmITF5vbm--gAk_Clo403h2gdw_jir22jlECRZZ05..">每日学习</a>
+                <a href="#">敬请期待</a>
+            </div>
         </div>
     </div>
+
+    <!-- 分类导航 -->
+    <div class="nav">
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E8%A1%8D%E7%94%9F%E9%A1%B5%E9%9D%A2/%E6%9C%8D%E9%A5%B0%E5%8C%BA.html" class="nav-item">华丽服饰区</a>
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E8%A1%8D%E7%94%9F%E9%A1%B5%E9%9D%A2/%E9%9B%B6%E9%A3%9F%E5%8C%BA.html" class="nav-item">美味零食区</a>
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E8%A1%8D%E7%94%9F%E9%A1%B5%E9%9D%A2/%E7%94%9F%E6%B4%BB%E7%94%A8%E5%93%81%E5%8C%BA.html" class="nav-item">生活用品区</a>
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E8%A1%8D%E7%94%9F%E9%A1%B5%E9%9D%A2/%E5%8D%8A%E6%8A%98%E5%8C%BA.html" class="nav-item">18:30后半折区</a>
+    </div>
+    <div class="nav">
+        <a href="#" class="">首页展示</a>
+    </div>
+
+    <!-- 商品展示区 -->
+    <div class="gallery">
+        <!-- 第一行 -->
+        <div class="product">
+            <a href="#">
+                <img src="images/动漫女孩.PNG" alt="1">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">收藏</a>
+                <a href="" class="buy">购买</a>
+            </div>
+        </div>
+        <!-- 重复5次类似结构，共6个商品 -->
+        <div class="product">
+            <a href="#">
+                <img src="images/动漫女孩1.png" alt="2">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">收藏</a>
+                <a href="" class="buy">购买</a>
+            </div>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="images/动漫男主.png" alt="3">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">收藏</a>
+                <a href="" class="buy">购买</a>
+            </div>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="images/3.png" alt="4">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">收藏</a>
+                <a href="#" class="buy">购买</a>
+            </div>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="images/4.png" alt="5">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">收藏</a>
+                <a href="#" class="buy">购买</a>
+            </div>
+        </div>
+        <div class="product">
+            <a href="">
+                <img src="images/5.png" alt="6">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">收藏</a>
+                <a href="#" class="buy">购买</a>
+            </div>
+        </div>
+        <!-- 剩余4个商品结构相同 -->
+    </div>
+
+    <!-- 底部导航 -->
+    <div class="footer">
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E7%BD%91%E9%A1%B5%EF%BC%88%E7%B1%BB%E4%BC%BC%E6%B7%98%E5%AE%9D%EF%BC%89/index.html" class="footer-item">首页</a>
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E7%BD%91%E9%A1%B5%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81/jieshao.html" class="footer-item">介绍</a>
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%82%B9%E5%8D%95%EF%BC%88%E8%A1%8D%E7%94%9F%EF%BC%89/xiaochengxu.html" class="footer-item">我要点单</a>
+        <a href="#" class="footer-item">我的</a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html> <!-- 结束 HTML 文档 -->
+</html>
