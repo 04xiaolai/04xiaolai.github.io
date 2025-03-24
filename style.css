@@ -1,0 +1,48 @@
+body { /* 设置网页 body 元素的样式 */
+    font-family: Arial, sans-serif; /* 设置字体为 Arial，如果不可用则使用 sans-serif 字体 */
+    background-color: #f0f0f0; /* 设置背景颜色为浅灰色 */
+    text-align: center; /* 设置文本居中对齐 */
+}
+
+h1 { /* 设置 h1 标题元素的样式 */
+    color: #333; /* 设置标题文字颜色为深灰色 */
+}
+
+/* 设置大框架的样式 */
+.main-frame { 
+    width: 90%; /* 设置大框架的宽度为页面宽度的 90% */
+    margin: 0 auto; /* 将大框架水平居中 */
+    padding: 20px; /* 设置内边距 */
+    background-color: #f9f9f9; /* 设置背景颜色为浅灰色 */
+    border: 2px solid #ccc; /* 设置边框为 2px 的灰色实线 */
+    border-radius: 20px; /* 设置边框圆角为 20px */
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-direction: column; /* 设置子元素垂直排列 */
+    flex-wrap: wrap; /* 允许子元素换行 */
+    gap: 20px; /* 设置子元素之间的间距为 20px */
+}
+
+/* 设置小框架的样式 */
+.sub-frame {
+    flex: 1 1 calc(33.33% - 20px); /* 设置每个小框架的宽度为三分之一，减去间距 */
+    padding: 15px; /* 设置内边距 字体和这个框架的距离*/
+    background-color: #fff; /* 设置背景颜色为白色 */
+    border: 1px solid #ddd; /* 设置边框为 1px 的浅灰色实线 */
+    border-radius: 8px; /* 设置边框圆角为 8px */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    min-width: 200px; /* 设置小框架的最小宽度 */
+    /*padding-left: 150px; /*字体和左边框架的距离*/
+}
+
+/* 设置小框架标题的样式 */
+.sub-frame h2 {
+    color: #333; /* 设置标题文字颜色为深灰色 */
+    margin-bottom: 10px; /* 设置标题下方的外边距 */
+    font-size: 30px; /*设置h2的字体大小*/
+}
+
+/* 设置小框架内容的样式 */
+.sub-frame p {
+    color: #666; /* 设置内容文字颜色为灰色 */
+    font-size: 24px; /* 设置内容文字大小为 24px */
+}

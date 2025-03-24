@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>小赖购物商场</title>
+    <link rel="stylesheet" href="服饰区.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="header">
+        <div class="logo">欢迎来到小赖购物商城</div>
+        <div class="search-container">
+            <input type="text" placeholder="搜索商品..." id="searchInput">
+            <div class="dropdown-content" id="dropdown">
+                <a href="https://item.taobao.com/item.htm?spm=a21bo.tmall%2Fa.201876.d3.1778c3d5z1L9Y4&id=898089629214&scm=1007.40986.420852.0&pvid=621ac261-1a31-46af-a5f3-5fe432f4a00d&xxc=home_recommend&skuId=5922130655649&utparam=%7B%22aplus_abtest%22%3A%22e71404bbe162e3b17759f4703805c69f%22%7D&priceTId=2147816a17426513155921403eba11&pisk=ggt-nnfMejclDFxRnLu0xF_48WMcRqvzrQJ_x6fuRIdvCdPlR6vlvvdVi3fkEgwyuCv_q30PxkIPYMGiscmgULSFA6DI4UPzG9BExuZQAgSXgm_AVcmMUKelFAvjj3YMQTWzRkOCPZ6fQs6COu6IHZ6GdMZ5RuabGs5fAT6QPK1fBOqQPMOQhm6PdWw5dwifl9X1A6OQVmMALs65AMM1m8C3F6Ep5J5TqZZnUuZWDTQR9kfYvnKQja5_XsZLvZmNP1GGMkZBDTp0Elu0X2f67_bG1Ii02MpfpIQMyfEJ9p9wRZKLNYA6GedC3ElLJ1LBEF-coJaWHHCR53_YLAv6U9OCJElTjTIkkNKJzvPXFCfJ5gJ3BbvAWEQNhZwLPgYMIH76V0FNiNWpMNY-6ud143-MXB-_s1B3PxHY8y753okXrMmvlAQcH1D0oyzFotWAsxHY8y753tCinm4U8ZXV.">热门推荐</a>
+                <a href="https://item.taobao.com/item.htm?id=826700455285&priceTId=2147816a17426513608481539eba11&pvid=b1cfe85b-2782-4089-9180-24784ec3a8d6&scm=1007.40986.420852.0&skuId=5716916636124&spm=a21bo.tmall%2Fa.201876.d81.1778c3d5z1L9Y4&utparam=%7B%22aplus_abtest%22%3A%2217889849d7739d2285938f51c3c32872%22%7D&xxc=home_recommend">限时折扣</a>
+                <a href="https://item.taobao.com/item.htm?spm=a21bo.tmall%2Fa.201876.d56.1778c3d5z1L9Y4&id=892955264998&scm=1007.40986.420852.0&pvid=9b62404c-442e-459c-9284-327f873892ae&xxc=home_recommend&skuId=5741349349367&utparam=%7B%22aplus_abtest%22%3A%2260580920823638e364923e5b00f23bf8%22%7D&priceTId=2147816a17426513374061475eba11&pisk=gG4KnoM09OX3YdaKsWSMroiw4L1iFGVexJPXrYDHVReTGSJnVYVny_eZIyD3t2OUb-VX-yjErU3Ez46cnZbDTWurPYf58kJEfjGlrbiBA2u_QNitRZb0T5dnOsV1oyq0g7ceVUwSAcGsgAGSFeG56cGmN4TIVet6CAksPXGWA5MsMjYWA4wW1NG-9HtIVbG15XcIPYwSOF1taAGIP4MskBHkOYL8cQkv-c1eFe8UWXnKeUD9yyUkoDDflATJycYsAx6mBUT7WXFMtESMkgDb0vmmhR_MJ4FswRn0vtLLe7N4VcUJd62bCueS_lWJ2xE7tozijQtQ6zHKcyi9asVbTbwS2lWvoX33XmULY_J_O-DLc2PkM9VtDlnq1cOJA2q0izobRwpqIml8BmqdHeef4zz0k8zXnxhkA1C943oI_F5_x4bTfsni6xfMj3-rjfltn1C943oI_fHcsNxy4ccN.">新品上市</a>
+                <a href="https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?spm=a21bo.tmall/a.yingxiao.d4_1.1778c3d5z1L9Y4&wh_pid=daily-552263&disableNav=YES&status_bar_transparent=true&itemId=563068200649">数码产品</a>
+                <a href="https://detail.tmall.com/item.htm?id=899181828488&spm=a21bo.tmall%2Fa.201876.d2.1778c3d5z1L9Y4&scm=1007.40986.420852.0&pvid=621ac261-1a31-46af-a5f3-5fe432f4a00d&xxc=home_recommend&skuId=5920698219898&utparam=%7B%22aplus_abtest%22%3A%220eeb4cf4280c14efb91b291cc70eb2f0%22%7D&priceTId=2147816a17426513155921403eba11&pisk=gdwxHj03Dab0Payxqo5kIWGy_Fskh_q2irrBIV0D1zU8Ak8m1VqmBGUrr-00mxt4ayqBn-fqIdHqQA_h-9XH0okZCVj13S82FciFIKijCxk7zTG-h9X30uKmcMq5K-V3YLmD1dasGbiSY4is5Ki12binfA9j1KOWP4uSCmi6GugSvDv6GAa6VTimXFiXCftSVmojCVas5gESzcHs5A1vDVxjWdFBb2pmNBs66Ce-Dj39I4pT37Jna2TjPdviZEGqRw0JCdw-DuxDL_vds2NEoX0QPTvxBuiTyXVAJKUTfkPswRLfmya76PizaNdtJ5Z0T8ckfIZ8BqhQhbKNxkZqfPGTawpnDxV-9-FVbUZb-qFI3lxdouhLwXoSNhdjnWq3QXwfHeuoTcU-tSQpHysP4J2L7JTnJcAf2gdw_jiyUgNmITF5vbm--gAk_Clo403h2gdw_jir22jlECRZZ05..">每日学习</a>
+                <a href="#">敬请期待</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 分类导航 -->
+    <div class="nav">
+        <a href="#" class="nav-item">华丽服饰区</a>
+    </div>
+    <div class="nav">
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E5%B0%8F%E8%B5%96%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/index.html" class="">返回首页</a>
+    </div>
+
+    <!-- 商品展示区 -->
+    <div class="gallery">
+        <!-- 第一行 -->
+        <div class="product">
+            <a href="#">
+                <img src="https://img14.360buyimg.com/jdcms/s480x480_jfs/t1/284487/36/6969/136963/67de144aF1408b40b/6eb1b68000a684f4.jpg.avif" alt="1">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">加入购物车</a>
+                <a href="#" class="buy">购买</a>
+            </div>
+        </div>
+        <!-- 重复5次类似结构，共6个商品 -->
+        <div class="product">
+            <a href="#">
+                <img src="https://img20.360buyimg.com/jdcms/s480x480_jfs/t1/274083/33/7030/194092/67dccf16F0c56b7bc/6521cc1c1aef2e77.jpg.avif" alt="2">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">加入购物车</a>
+                <a href="#" class="buy">购买</a>
+            </div>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="https://img20.360buyimg.com/jdcms/s480x480_jfs/t1/239180/20/21531/143454/675a61d7Ffafc5bef/de00eff4c7dd5fb8.jpg.avif" alt="3">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">加入购物车</a>
+                <a href="#" class="buy">购买</a>
+            </div>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="https://img13.360buyimg.com/jdcms/s480x480_jfs/t1/274549/22/7419/297809/67ddac7eFfd5e0a24/270f7eadb85ff616.jpg.avif" alt="4">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">加入购物车</a>
+                <a href="#" class="buy">购买</a>
+            </div>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="https://img30.360buyimg.com/jdcms/s480x480_jfs/t1/246175/2/23165/90667/672afcb0Fe020a5be/2e656ce49231a4d0.jpg.avif" alt="5">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">加入购物车</a>
+                <a href="#" class="buy">购买</a>
+            </div>
+        </div>
+        <div class="product">
+            <a href="https://item.jd.com/100032668716.html">
+                <img src="https://img10.360buyimg.com/jdcms/s480x480_jfs/t1/284620/25/4567/109376/67da1cb8F2166f74f/b1aec272e9a14a4d.jpg.avif" alt="6">
+            </a>
+            <div class="actions">
+                <a href="#" class="cart">加入购物车</a>
+                <a href="#" class="buy">购买</a>
+            </div>
+        </div>
+        <!-- 剩余4个商品结构相同 -->
+    </div>
+
+    <!-- 底部导航 -->
+    <div class="footer">
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E7%BD%91%E9%A1%B5%EF%BC%88%E7%B1%BB%E4%BC%BC%E6%B7%98%E5%AE%9D%EF%BC%89/index.html" class="footer-item">首页</a>
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E7%BD%91%E9%A1%B5%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81/index.html" class="footer-item">介绍</a>
+        <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%82%B9%E5%8D%95%EF%BC%88%E8%A1%8D%E7%94%9F%EF%BC%89/xiaochengxu.html" class="footer-item">我要点单</a>
+        <a href="#" class="footer-item">我的</a>
+    </div>
+
+    <script src="服饰区.js"></script>
+</body>
+</html>

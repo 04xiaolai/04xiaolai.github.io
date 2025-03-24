@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点餐小程序</title>
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="xiaochengxu.css">
+    
+    <script>
+        // 页面加载时请求通知权限
+        document.addEventListener('DOMContentLoaded', () => {
+            if ("Notification" in window && Notification.permission !== "granted") {
+                Notification.requestPermission();
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- 菜单容器 -->
+    <div class="container">
+        <h1>欢迎小赖点餐中心</h1>
+        <div class="nav">
+            <a href="file:///C:/Users/ASUS/Desktop/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%84%E7%B1%BB%E6%96%87%E4%BB%B6/%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81/%E5%B0%8F%E8%B5%96%E4%B8%93%E5%B1%9E%E7%BD%91%E7%AB%99/index.html" class="">返回首页</a>
+        </div>
+        <div id="menu" class="menu"></div>
+        <h2>购物车</h2>
+        <div id="cart" class="cart"></div>
+        <div id="total" class="total">总价：￥0</div>
+        <!-- 新增下单按钮 -->
+        <button id="checkoutBtn" class="checkout-btn" onclick="submitOrder()">去下单</button>
+    </div>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="xiaochengxu.js"></script>
+</body>
+</html>

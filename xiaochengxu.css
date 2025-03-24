@@ -1,0 +1,102 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif; /* 设置字体 */
+    margin: 0;
+    padding: 20px; /* 页面边距 */
+    background-color: #f5f5f5; /* 背景颜色 */
+}
+
+.container {
+    max-width: 800px; /* 最大宽度 */
+    margin: 0 auto; /* 居中显示 */
+}
+
+.menu {
+    display: grid; /* 网格布局 */
+    grid-template-columns: repeat(3, 1fr); /* 3列布局 */
+    gap: 20px; /* 元素间距 */
+    margin-bottom: 30px; /* 底部边距 */
+}
+
+.menu-item {
+    background: white; /* 背景色 */
+    padding: 20px; /* 内边距 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 阴影 */
+    cursor: pointer; /* 鼠标手势 */
+    transition: transform 0.2s; /* 动画效果 */
+    display: flex; /* 启用弹性布局 */
+    flex-direction: column; /* 垂直排列 */
+}
+
+/* 菜单项图片样式 */
+.menu-item img {
+    width: 200px; /* 固定图片宽度 */
+    height: 180px; /* 固定图片高度 */
+    object-fit: cover; /* 保持图片比例 */
+    border-radius: 8px; /* 圆角 */
+    margin-left: auto; /* 图片靠右 */
+}
+
+
+.menu-item:hover {
+    transform: translateY(-2px); /* 悬停效果 */
+}
+
+.cart {
+    background: white; /* 背景色 */
+    padding: 20px; /* 内边距 */
+    border-radius: 8px; /* 圆角 */
+    margin-bottom: 20px; /* 底部边距 */
+}
+
+.cart-item {
+    display: flex; /* 弹性布局 */
+    justify-content: space-between; /* 两端对齐 */
+    margin-bottom: 10px; /* 底部边距 */
+}
+
+.total {
+    font-size: 24px; /* 字体大小 */
+    font-weight: bold; /* 加粗 */
+    color: #ff4500; /* 字体颜色 */
+}
+
+button {
+    background: #4CAF50; /* 背景色 */
+    color: white; /* 字体颜色 */
+    border: none; /* 去除边框 */
+    padding: 8px 16px; /* 内边距 */
+    border-radius: 4px; /* 圆角 */
+    cursor: pointer; /* 鼠标手势 */
+}
+
+button:hover {
+    background: #45a049; /* 悬停背景色 */
+}
+
+/* 下单按钮样式 */
+.checkout-btn {
+    background: #ff4500; /* 橙色背景 */
+    width: 100%; /* 全宽 */
+    padding: 15px; /* 加大内边距 */
+    margin-top: 20px; /* 顶部间距 */
+    display: block !important; /* 强制显示（通过透明度控制） */
+    opacity: 0; /* 初始不可见 */
+    transition: opacity 0.3s; /* 添加渐变效果 */
+    pointer-events: none; /* 隐藏时不可点击 */
+}
+
+.checkout-btn.show {
+    /*display: block; /* 显示按钮 */
+    opacity: 1; /* 完全显示 */
+    pointer-events: auto; /* 恢复点击 */
+}
+
+/* 新增通知样式适配 */
+@media (max-width: 600px) {
+    /* 移动端通知优化 */
+    .container {
+        padding: 10px;
+    }
+}
