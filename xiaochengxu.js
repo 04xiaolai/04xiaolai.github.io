@@ -90,7 +90,7 @@ function submitOrder() {
         console.log('通知权限未授权');
     }
     
-    alert('下单成功！');
+    alert('下单成功！您的单号为:04');
 }
 
 // 新增权限请求函数
@@ -124,7 +124,7 @@ function sendNotification(total) {
     try {
         const options = {
             body: `金额：￥${total}`,
-            icon: './images/logo.png', // 修正路径
+            icon: './images/logoi.jpg', // 修正路径
             vibrate: [200, 100, 200] // 添加振动反馈
         };
         

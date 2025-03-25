@@ -5,19 +5,79 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     background-color: #f5f5f5;
+    border: 2px solid #ccc; /* 添加边框方便观察效果 */
+    font-size: 16px; /*新加*/
 }
 
-/* 顶部布局 */
+/* 顶部布局 *//* 导航栏布局优化 */
 .header {
+    display: flex;
+    align-items: center;
+    /*padding: 10px 20px;*/
+    /*background-color: #ffffff;*/
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.headero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+    margin-top: 20px; /* 设置顶部外边距为 20 像素 */
 }
 
+/* 定义容器样式 */
+.logo-text-container {
+    display: flex;          /* 启用弹性布局 */
+    align-items: center;    /* 垂直居中 */
+    gap: 20px;             /* Logo 和文字之间的间距 */
+}
+
+/* Logo 基础样式 */
 .logo {
+    width: 50px;   /* 按需调整宽度 */
+    height: auto;   /* 高度自适应 */
+    /*margin-right: 20px; /* 与右侧元素的间距 */
+}
+
+/* 文字样式 */
+.welcome-text {
+    margin: 0;             /* 清除默认外边距 */
+    font-size: 24px;       /* 文字大小 */
+    color: #333;           /* 文字颜色 */
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 40px;  /* 手机端缩小 Logo */
+    }
+
+    .welcome-text {
+        font-size: 18px;  /* 手机端缩小文字 */
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+
+.logog {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
 /* 搜索框样式 */
