@@ -1,12 +1,12 @@
 // script.js
 // 菜单数据
 const menuItems = [
-    { id: 1, name: '汉堡', price: 25, img: './images/burger.jpg'},
-    { id: 2, name: '薯条', price: 12, img: './images/shutiao.jpg'},
-    { id: 3, name: '可乐', price: 8, img: './images/kele.jpg'},
-    { id: 4, name: '鸡翅', price: 15, img: './images/jitui.jpg'},
-    { id: 5, name: '沙拉', price: 18, img: './images/jirjuan.jpg'},
-    { id: 6, name: '冰淇淋', price: 10, img: './images/binqiling.jpg'}  //price是价格
+    { id: 1, name: '汉堡', price: 25, img: 'https://officialwebsitestorage.blob.core.chinacloudapi.cn/public/upload/attachment/2022/08/202208081011205699.png'},
+    { id: 2, name: '薯条', price: 12, img: 'https://officialwebsitestorage.blob.core.chinacloudapi.cn/public/upload/attachment/2022/08/202208091547349086.png'},
+    { id: 3, name: '可乐', price: 8, img: 'https://officialwebsitestorage.blob.core.chinacloudapi.cn/public/upload/attachment/2022/08/202208091541242793.png'},
+    { id: 4, name: '全家桶', price: 45, img: 'https://officialwebsitestorage.blob.core.chinacloudapi.cn/public/upload/attachment/2022/08/202208091711212667.png'},
+    { id: 5, name: '厚牛堡', price: 28, img: 'https://officialwebsitestorage.blob.core.chinacloudapi.cn/public/upload/attachment/2022/08/202208081022345223.png'},
+    { id: 6, name: '冰淇淋', price: 10, img: 'https://officialwebsitestorage.blob.core.chinacloudapi.cn/public/upload/attachment/2020/03/202003191449258974.png'}  //price是价格
 ];
 
 // 购物车数据
