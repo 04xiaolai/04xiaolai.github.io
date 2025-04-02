@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>回忆录 - 交互式书本</title>
+    <style>
+        /* 添加标题样式 */
+        .memoir-title {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: '楷体', cursive;
+            font-size: 2.5em;
+            color: #5a4a3a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            z-index: 100;
+            background: linear-gradient(45deg, #f5e9db 30%, #e6d5c3 70%);
+            padding: 10px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 2px solid #8b7355;
+        }
+        /* 怀旧背景样式 */
+        body {
+            margin: 0;
+            padding: 120px 20px 20px; /* 增加顶部间距避免遮挡 */
+            min-height: 100vh;
+            background: 
+                linear-gradient(45deg, #e6d5c3 25%, transparent 25%),
+                linear-gradient(-45deg, #e6d5c3 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #e6d5c3 75%),
+                linear-gradient(-45deg, transparent 75%, #e6d5c3 75%);
+            background-size: 20px 20px;
+            background-color: #f5e9db;
+            overflow-x: auto; /* 添加水平滚动条 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 修改容器为网格布局 */
+        .books-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 5列布局 */
+            gap: 30px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .book {
+            position: relative;
+            cursor: pointer;
+            transition: 0.5s;
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+
+        .book::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3; /* 背景透明度 */
+            z-index: 1;
+        }
+        /* 为每本书指定不同背景 */
+        .book:nth-child(1)::before { background-image: url('3.png'); }
+        .book:nth-child(2)::before { background-image: url('4.png'); }
+        .book:nth-child(3)::before { background-image: url('5.png'); }
+        .book:nth-child(4)::before { background-image: url('动漫男主.png'); }
+        .book:nth-child(5)::before { background-image: url('动漫女孩.png'); }
+        .book:nth-child(6)::before { background-image: url('动漫女孩1.png'); }
+        .book:nth-child(7)::before { background-image: url('丸子1.jpg'); }
+        .book:nth-child(8)::before { background-image: url('丸子2.jpg'); }
+        .book:nth-child(9)::before { background-image: url('丸子3.jpg'); }
+        .book:nth-child(10)::before { background-image: url('丸子4.jpg'); }
+        .book:nth-child(11)::before { background-image: url('蓝天.jpg'); }
+        .book:nth-child(12)::before { background-image: url('4.png'); }
+        /* 继续添加更多书本背景... */
+
+        /* 内容容器层级提升 */
+        .book-title,
+        .book-content {
+            position: relative;
+            z-index: 2; /* 确保文字在背景之上 */
+        }
+
+
+        /* 书名文字样式 */
+        .book-title {
+            font-family: '楷体', cursive;
+            color: #e6d5c3;
+            font-size: 1.4em;
+            text-align: center;
+            padding: 10px;
+            writing-mode: horizontal-tb;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 0.3s;
+        }
+
+        /* 闭合书本样式 */
+        .book-closed {
+            width: 180px;
+            height: 260px;
+            background: #8b7355;
+            border-radius: 5px 12px 12px 5px;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.15);
+            position: relative;
+            transition: 0.5s;
+            cursor: pointer;
+            overflow: hidden; /* 隐藏溢出内容 */
+        }
+
+        /* 打开书本样式 */
+        .book-open {
+            width: 320px;
+            height: 240px;
+            background: #fff5e6;
+            transform: rotateY(-30deg);
+            box-shadow: -10px 10px 20px rgba(0,0,0,0.15);
+        }
+
+        /* 添加悬停效果 */
+        .book-closed:hover::before {
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        /* 给打开的书本添加蒙版 */
+        .book-open::before {
+            background-color: rgba(255,255,255,0.9);
+        }
+
+        .book-content {
+            display: none; /* 默认隐藏内容 */
+            padding: 20px;
+            font-family: '楷体', cursive;
+            color: #237c42; /*书本文字颜色*/
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .book-open .book-content {
+            display: block;
+            opacity: 1;
+        }
+
+        /* 书本打开时隐藏书名 */
+        .book-open .book-title {
+            display: none;
+            opacity: 1; /* 改为透明度变化 */
+            pointer-events: none;
+        }
+
+        /* 书脊装饰 */
+        .book-closed::after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 80%;
+            background: #6b5d4d;
+            border-radius: 3px;
+        }
+        /* 新增书本示例样式 */
+        .book:nth-child(1) { background: #7a634c; } /* 第一行书本颜色变化 */
+        .book:nth-child(2) { background: #6c5641; }
+        .book:nth-child(3) { background: #5d4937; }
+        .book:nth-child(4) { background: #574638; }
+        .book:nth-child(5) { background: #7a634c; } /* 第二行书本颜色变化 */
+        .book:nth-child(6) { background: #6c5641; }
+        .book:nth-child(7) { background: #5d4937; }
+        .book:nth-child(8) { background: #574638; } 
+        .book:nth-child(9) { background: #7a634c; } /* 第三行书本颜色变化 */
+        .book:nth-child(10) { background: #6c5641; }
+        .book:nth-child(11) { background: #5d4937; }
+        .book:nth-child(12) { background: #574638; }
+
+        /* 在媒体查询中添加响应式布局 */
+        @media (max-width: 768px) {
+            .books-container {
+                grid-template-columns: repeat(2, 1fr); /* 手机端显示2列 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .books-container {
+                grid-template-columns: 1fr; /* 超小屏幕显示1列 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 新增标题 -->
+    <h1 class="memoir-title">某某某回忆录</h1>
+    <div class="books-container">
+        <!-- 第一行 -->
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">往事追忆录</div>
+            <div class="book-content">
+                <h2>第一章：初遇</h2>
+                <p>那是一个飘着细雨的清晨，老书店的木门发出吱呀的声响...</p>
+            </div>
+        </div>
+        <div class="book book-open" onclick="toggleBook(this)">
+            <div class="book-title">流年拾遗</div>
+            <div class="book-content">
+                <h2>第二章：成长</h2>
+                <p>校园里的梧桐树年复一年地生长，见证了我们青涩的时光...</p>
+            </div>
+        </div>
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">岁月留痕</div>
+            <div class="book-content">
+                <h2>第三章：远行</h2>
+                <p>火车鸣笛的声音划破晨雾，月台上的人群渐渐模糊...</p>
+            </div>
+        </div>
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">4春之絮语</div>
+            <div class="book-content">hsfhdsf</div>
+        </div>
+        <!-- 第二行 -->
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">夏夜星辰</div>
+            <div class="book-content">dshfed</div>
+        </div>
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">秋日私语</div>
+            <div class="book-content">...</div>
+        </div>
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">冬雪印记</div>
+            <div class="book-content">...</div>
+        </div>
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">故园旧梦</div>
+            <div class="book-content">...</div>
+        </div>
+        <!-- 第三行 -->
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">旅途拾光</div>
+            <div class="book-content">...</div>
+        </div>
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">冬雪印记</div>
+            <div class="book-content">...</div>
+        </div>
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">故园旧梦</div>
+            <div class="book-content">...</div>
+        </div>
+        <div class="book book-closed" onclick="toggleBook(this)">
+            <div class="book-title">旅途拾光</div>
+            <div class="book-content">...</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleBook(clickedBook) {
+            const books = document.querySelectorAll('.book');
+            const isOpening = clickedBook.classList.contains('book-open');
+
+            books.forEach(book => {
+                if (book === clickedBook) {
+                    if (!isOpening) {
+                        book.classList.add('book-open');
+                        book.classList.remove('book-closed');
+                        book.style.transform = 'rotateY(-30deg)';
+                    } else {
+                        book.classList.remove('book-open');
+                        book.classList.add('book-closed');
+                        book.style.transform = '';
+                    }
+                } else {
+                    book.classList.remove('book-open');
+                    book.classList.add('book-closed');
+                    book.style.transform = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
