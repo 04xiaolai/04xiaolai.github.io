@@ -13,13 +13,13 @@ document.addEventListener('click', function() {
 document.querySelectorAll('.cart').forEach(button => {
     button.addEventListener('click', function(e) {
         e.preventDefault();
-        alert('已收藏');
+        alert('收藏成功');
     });
 });
 
 document.querySelectorAll('.buy').forEach(button => {
     button.addEventListener('click', function(e) {
         e.preventDefault();
-        alert('已加入我要点单列表');
+        alert('感谢您的点赞');
     });
 });
